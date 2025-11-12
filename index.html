@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phonics Review Organizer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #1D4ED8; /* Blue-700 */
+            --color-accent: #FBBF24; /* Amber-400 */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            color: #1f2937;
+        }
+        .container {
+            max-width: 95%;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        .card {
+            background-color: white;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+        }
+        .header {
+            background-color: var(--color-primary);
+            color: white;
+            padding: 1rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.875rem;
+        }
+        th, td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #e5e7eb;
+            text-align: left;
+        }
+        th {
+            background-color: #f9fafb;
+            color: var(--color-primary);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .key-concept {
+            font-style: italic;
+            color: #4b5563;
+        }
+        .tag {
+            display: inline-block;
+            background-color: #DBEAFE; /* Blue-100 */
+            color: var(--color-primary);
+            padding: 0.2rem 0.6rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+            margin-bottom: 0.25rem;
+        }
+        /* Mobile specific adjustments */
+        @media (max-width: 640px) {
+            th, td {
+                padding: 0.5rem 0.75rem;
+            }
+            .header {
+                font-size: 1.1rem;
+                padding: 0.75rem;
+            }
+            .key-concept {
+                display: block;
+                margin-top: 0.5rem;
+                font-size: 0.8rem;
+                padding-top: 0.5rem;
+                border-top: 1px dashed #e5e7eb;
+            }
+            /* Make key columns stack/collapse slightly on small screens */
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+            thead tr {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+            tr {
+                border: 1px solid #ccc;
+                margin-bottom: 0.75rem;
+                border-radius: 0.5rem;
+                overflow: hidden;
+            }
+            td {
+                border: none;
+                position: relative;
+                padding-left: 50%; /* Space for the "label" */
+                text-align: right;
+            }
+            td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 0;
+                width: 50%;
+                padding-left: 10px;
+                white-space: nowrap;
+                text-align: left;
+                font-weight: 600;
+                color: #4b5563;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="text-center py-6">
+            <h1 class="text-3xl font-bold text-gray-800">Grade 3 Phonics Review</h1>
+            <p class="text-gray-500 mt-1">Organized for easy explanation</p>
+        </header>
+
+        <!-- Vowel Digraphs and R-Controlled Vowels -->
+        <div class="card">
+            <div class="header bg-yellow-600">
+                1. Vowel Digraphs (Two Vowels, One Sound)
+            </div>
+            <table class="min-w-full">
+                <thead>
+                    <tr>
+                        <th class="w-1/4">Pattern</th>
+                        <th class="w-1/2">Words</th>
+                        <th class="w-1/4">Key Concept</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Pattern">Long E (ee, ea, ie)</td>
+                        <td data-label="Words">
+                            <span class="tag">peaches</span>
+                            <span class="tag">agree</span>
+                            <span class="tag">freezing</span>
+                        </td>
+                        <td data-label="Key Concept" class="key-concept">"When two vowels go walking, the first one does the talking."</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Pattern">Long O (oa, ow)</td>
+                        <td data-label="Words">
+                            <span class="tag">shadow</span>
+                            <span class="tag">reason</span>
+                            <span class="tag">pillow</span>
+                            <span class="tag">roaring</span>
+                            <span class="tag">board</span>
+                            <span class="tag">soared</span>
+                        </td>
+                        <td data-label="Key Concept" class="key-concept">These combinations make the long 'O' sound.</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Pattern">Long A (ai, ay)</td>
+                        <td data-label="Words">
+                            <span class="tag">braided</span>
+                            <span class="tag">display</span>
+                        </td>
+                        <td data-label="Key Concept" class="key-concept">These make the long 'A' sound. The 'ay' is often at the end of a word.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- R-Controlled Vowels -->
+        <div class="card">
+            <div class="header bg-red-600">
+                2. R-Controlled Vowels (The Bossy R)
+            </div>
+            <table class="min-w-full">
+                <thead>
+                    <tr>
+                        <th class="w-1/4">Pattern</th>
+                        <th class="w-1/2">Words</th>
+                        <th class="w-1/4">Key Concept</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Pattern">ar</td>
+                        <td data-label="Words">
+                            <span class="tag">target</span>
+                            <span class="tag">alarm</span>
+                            <span class="tag">darkness</span>
+                            <span class="tag">forget</span>
+                            <span class="tag">trailer</span>
+                        </td>
+                        <td data-label="Key Concept" class="key-concept">The 'R' makes the 'A' sound like the word *car*.</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Pattern">ore / or</td>
+                        <td data-label="Words">
+                            <span class="tag">before</span>
+                            <span class="tag">adore</span>
+                            <span class="tag">explore</span>
+                            <span class="tag">Morning</span>
+                            <span class="tag">format</span>
+                            <span class="tag">absorb</span>
+                        </td>
+                        <td data-label="Key Concept" class="key-concept">The 'R' controls the vowel, making the 'O' sound like *door* or *fork*.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Syllable Patterns -->
+        <div class="card">
+            <div class="header">
+                3. Syllable Patterns (Where to Divide a Word)
+            </div>
+            <table class="min-w-full">
+                <thead>
+                    <tr>
+                        <th class="w-1/4">Pattern</th>
+                        <th class="w-1/4">Words</th>
+                        <th class="w-1/2">Explanation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Pattern">VCV (Vowel-Consonant-Vowel)</td>
+                        <td data-label="Words">
+                            <span class="tag">ti/ger</span>
+                            <span class="tag">li/zard</span>
+                            <span class="tag">fi/nal</span>
+                            <span class="tag">fo/cus</span>
+                        </td>
+                        <td data-label="Explanation" class="key-concept">**Split BEFORE the consonant.** This often leaves the first vowel **LONG** (says its name).</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Pattern">VCCV (Vowel-Consonant-Consonant-Vowel)</td>
+                        <td data-label="Words">
+                            <span class="tag">fin/ish</span>
+                            <span class="tag">yel/low</span>
+                            <span class="tag">but/ton</span>
+                        </td>
+                        <td data-label="Explanation" class="key-concept">**Split BETWEEN the two consonants.** This often leaves the first vowel **SHORT** (makes its sound).</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <footer class="text-center py-4 text-sm text-gray-500">
+            Tip: Explain the "Why" behind the split to make the rules stick!
+        </footer>
+    </div>
+
+</body>
+</html>
+
